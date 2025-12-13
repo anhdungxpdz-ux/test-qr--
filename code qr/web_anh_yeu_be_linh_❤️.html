@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anh yêu bé Linh ❤️</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    h1 {
+      font-size: 4rem;
+      color: white;
+      text-shadow: 0 0 20px rgba(255,255,255,0.8);
+      z-index: 10;
+    }
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: rgba(255, 0, 100, 0.8);
+      font-size: 20px;
+      animation: floatUp linear forwards;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.8); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Anh yêu bé Linh 💖</h1>
+
+  <!-- Nhạc nền -->
+  <audio autoplay loop>
+    <!-- Sau khi up web, thay link bên dưới bằng file Careless Whisper (.mp3) bạn upload -->
+    <source src="careless_whisper.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+      heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
